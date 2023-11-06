@@ -1,0 +1,19 @@
+{:deps {org.clojure/data.avl   {:mvn/version "0.1.0"}}
+ :paths ["src"]
+ :aliases
+ {:test
+  {:extra-deps  {;; For benchmarking, match versions with shadow-cljs.end
+                 datascript/datascript       {:mvn/version "1.4.2"}
+                 org.clojars.quoll/asami     {:mvn/version "2.3.3"}}
+   :extra-paths ["test"]}
+  :drafts
+  {:extra-deps  {org.clojure/test.check      {:mvn/version "1.0.0"}
+                 org.clojure/spec.alpha {:mvn/version "0.2.187"}}
+   :extra-paths ["drafts"]}
+   :cljs
+   {:extra-deps {thheller/shadow-cljs {:mvn/version "2.25.8"}}}
+  :build
+  {:extra-deps        {io.github.clojure/tools.build {:mvn/version "0.9.6"}
+                       slipset/deps-deploy {:mvn/version "RELEASE"}}
+   :extra-paths ["build"]
+   :ns-default  build.core}}}

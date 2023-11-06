@@ -1,0 +1,14 @@
+{:deps {:aliases [:cljs :test :drafts]}
+ :builds       {:dev
+                {:target     :browser
+                 :output-dir "resources/public/js/dev"
+                 :modules    {:main
+                              {:entries [entity-graph.core]}}
+                 :devtools   {:repl-pprint true}}}
+ :nrepl        {:port 9000}
+ ;; For ClojureScript REPL with nrepl:
+ ;; 0. Configure nREPL with localhost/port
+ ;; 1. Command line: `npx shadow-cljs server`
+ ;; 2. Start nREPL and in the repl: (shadow/watch :dev)
+ ;; 3. (shadow/browser-repl)
+ :socket-repl  {:port 9001}}
